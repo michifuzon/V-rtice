@@ -1,0 +1,33 @@
+<svg width="100%" viewBox="0 0 680 420" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon rings -->
+  <circle cx="160" cy="210" r="110" fill="none" stroke="#7c3aed" stroke-width="3" opacity="0.25"/>
+  <circle cx="160" cy="210" r="90"  fill="none" stroke="#7c3aed" stroke-width="3" opacity="0.40"/>
+  <circle cx="160" cy="210" r="70"  fill="none" stroke="#7c3aed" stroke-width="3" opacity="0.60"/>
+  <circle cx="160" cy="210" r="50"  fill="none" stroke="#9f5af7" stroke-width="3.5" opacity="0.80"/>
+  <!-- Spiral arms -->
+  <path d="M160 100 Q230 130 230 210 Q230 300 160 320 Q80 340 60 260" fill="none" stroke="#9f5af7" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  <path d="M270 210 Q250 280 190 300 Q120 320 90 270 Q60 210 100 160" fill="none" stroke="#c084fc" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <path d="M160 320 Q100 300 85 240 Q70 170 130 140" fill="none" stroke="#a855f7" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+  <!-- Ticket center -->
+  <g transform="translate(160,210) rotate(-20)">
+    <rect x="-36" y="-16" width="72" height="32" rx="5" fill="#7c3aed"/>
+    <circle cx="-36" cy="0" r="7" fill="#1a0a2e"/>
+    <circle cx="36"  cy="0" r="7" fill="#1a0a2e"/>
+    <line x1="-26" y1="0" x2="26" y2="0" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <circle cx="0" cy="-25" r="4" fill="#e9d5ff" opacity="0.9"/>
+    <line x1="0" y1="-32" x2="0" y2="-18" stroke="#e9d5ff" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="-7" y1="-25" x2="7" y2="-25" stroke="#e9d5ff" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+  <!-- Decorative dots -->
+  <circle cx="160" cy="102" r="4"   fill="#9f5af7" opacity="0.9"/>
+  <circle cx="258" cy="158" r="3"   fill="#c084fc" opacity="0.7"/>
+  <circle cx="268" cy="268" r="3.5" fill="#7c3aed" opacity="0.8"/>
+  <circle cx="160" cy="318" r="3"   fill="#a855f7" opacity="0.7"/>
+  <circle cx="62"  cy="268" r="4"   fill="#9f5af7" opacity="0.85"/>
+  <circle cx="56"  cy="155" r="3"   fill="#c084fc" opacity="0.65"/>
+  <!-- Logotype -->
+  <text x="305" y="228" fill="#f0e8ff" font-family="Poppins, sans-serif" font-size="52" font-weight="700">VÓRTICE</text>
+  <text x="308" y="258" fill="#c4a8f0" font-family="Poppins, sans-serif" font-size="13" font-weight="400">TICKETS &amp; EVENTOS</text>
+  <!-- Underline accent -->
+  <rect x="305" y="268" width="320" height="3" rx="1.5" fill="#9f5af7" opacity="0.5"/>
+</svg>

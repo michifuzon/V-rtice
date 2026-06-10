@@ -1,0 +1,22 @@
+<svg viewBox="0 0 680 680" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="340" cy="340" r="300" fill="#1a0a2e"/>
+  <circle cx="340" cy="340" r="260" fill="none" stroke="#7c3aed" stroke-width="5" opacity="0.20"/>
+  <circle cx="340" cy="340" r="210" fill="none" stroke="#7c3aed" stroke-width="6" opacity="0.35"/>
+  <circle cx="340" cy="340" r="160" fill="none" stroke="#9f5af7" stroke-width="7" opacity="0.55"/>
+  <circle cx="340" cy="340" r="110" fill="none" stroke="#c084fc" stroke-width="8" opacity="0.75"/>
+  <path d="M340 80 Q460 140 460 340 Q460 550 340 590 Q190 620 140 500" fill="none" stroke="#9f5af7" stroke-width="9" stroke-linecap="round" opacity="0.9"/>
+  <path d="M590 340 Q560 480 460 520 Q340 560 240 490 Q130 410 170 270" fill="none" stroke="#c084fc" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+  <path d="M340 590 Q200 550 170 420 Q140 290 240 210" fill="none" stroke="#a855f7" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+  <g transform="translate(340,340) rotate(-20)">
+    <rect x="-78" y="-34" width="156" height="68" rx="11" fill="#9f5af7"/>
+    <circle cx="-78" cy="0" r="16" fill="#1a0a2e"/>
+    <circle cx="78" cy="0" r="16" fill="#1a0a2e"/>
+    <line x1="-58" y1="0" x2="58" y2="0" stroke="#e9d5ff" stroke-width="3" stroke-dasharray="8 6"/>
+  </g>
+  <circle cx="340" cy="82"  r="9" fill="#c084fc" opacity="0.95"/>
+  <circle cx="574" cy="210" r="7" fill="#a855f7" opacity="0.80"/>
+  <circle cx="590" cy="470" r="8" fill="#7c3aed" opacity="0.85"/>
+  <circle cx="340" cy="598" r="7" fill="#c084fc" opacity="0.75"/>
+  <circle cx="110" cy="470" r="9" fill="#9f5af7" opacity="0.90"/>
+  <circle cx="100" cy="210" r="7" fill="#c084fc" opacity="0.70"/>
+</svg>
