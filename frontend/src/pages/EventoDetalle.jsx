@@ -13,9 +13,10 @@ export default function EventoDetalle() {
   const navigate = useNavigate()
   const token    = localStorage.getItem('token')
 
-  const [evento,   setEvento]   = useState(null)
-  const [loading,  setLoading]  = useState(true)
-  const [error,    setError]    = useState('')
+  const [evento,    setEvento]   = useState(null)
+  const [loading,   setLoading]  = useState(true)
+  const [error,     setError]    = useState('')
+  const [imgError,  setImgError] = useState(false)
 
   const [cantidad,    setCantidad]    = useState(1)
   const [comprando,   setComprando]   = useState(false)
@@ -130,7 +131,10 @@ export default function EventoDetalle() {
         <div className="detalle-grid">
           {/* ── Columna principal ─────────────────────────── */}
           <div className="detalle-main">
-            <div className="detalle-placeholder">{emoji}</div>
+            {evento.imagen_url && !imgError
+              ? <img src={evento.imagen_url} alt={nombre} className="detalle-img" onError={() => setImgError(true)} />
+              : <div className="detalle-placeholder">{emoji}</div>
+            }
 
             <div className="detalle-content">
               {evento.categoria && (
