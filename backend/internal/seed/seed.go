@@ -67,7 +67,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  50000,
 			Precio:          25000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/lollapalooza/600/400",
 		},
 		{
 			Titulo:          "Cosquín Rock 2026",
@@ -80,7 +80,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  30000,
 			Precio:          18000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/cosquinrock/600/400",
 		},
 		{
 			Titulo:          "Noche de Tango en el Colón",
@@ -93,7 +93,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  2500,
 			Precio:          12000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/tango/600/400",
 		},
 		{
 			Titulo:          "Festival de Jazz Buenos Aires",
@@ -106,7 +106,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  5000,
 			Precio:          0,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/jazz/600/400",
 		},
 		// ── Teatro ──────────────────────────────────────────────
 		{
@@ -120,7 +120,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  800,
 			Precio:          7500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1503095396549-807759245b35?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/gronholm/600/400",
 		},
 		{
 			Titulo:          "Chicago: El Musical",
@@ -133,7 +133,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  1500,
 			Precio:          14000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/chicago/600/400",
 		},
 		{
 			Titulo:          "Hamlet — Compañía Nacional",
@@ -146,7 +146,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  600,
 			Precio:          6000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1460723237483-7a6dc9d0b212?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/hamlet/600/400",
 		},
 		// ── Humor ───────────────────────────────────────────────
 		{
@@ -160,7 +160,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  1200,
 			Precio:          8000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1527224538127-2104bb71c51b?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/standup/600/400",
 		},
 		{
 			Titulo:          "Fede Bal: Tour 2026",
@@ -173,7 +173,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  8000,
 			Precio:          9500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1485095329183-d0797cdc5676?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/fedebal/600/400",
 		},
 		{
 			Titulo:          "Improv Fest — Festival de Improvisación",
@@ -186,7 +186,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  350,
 			Precio:          4500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/improv/600/400",
 		},
 		// ── Deportes ────────────────────────────────────────────
 		{
@@ -200,7 +200,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  8000,
 			Precio:          15000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/superclasico/600/400",
 		},
 		{
 			Titulo:          "Maratón de Buenos Aires 2026",
@@ -213,7 +213,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  15000,
 			Precio:          3500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/maraton/600/400",
 		},
 		{
 			Titulo:          "Argentina vs Brasil — Amistoso FIFA",
@@ -226,7 +226,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  70000,
 			Precio:          22000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/argbrasil/600/400",
 		},
 		// ── Arte ────────────────────────────────────────────────
 		{
@@ -240,7 +240,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  10000,
 			Precio:          2500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/arteba/600/400",
 		},
 		{
 			Titulo:          "Van Gogh Alive — Experiencia Inmersiva",
@@ -253,7 +253,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  500,
 			Precio:          5500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/vangogh/600/400",
 		},
 		{
 			Titulo:          "Noche de los Museos 2026",
@@ -266,7 +266,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  999999,
 			Precio:          0,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/museos/600/400",
 		},
 		// ── Espectáculo ─────────────────────────────────────────
 		{
@@ -280,7 +280,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  3000,
 			Precio:          18000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/cirque/600/400",
 		},
 		{
 			Titulo:          "Fuerza Bruta — Wayra",
@@ -293,7 +293,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  600,
 			Precio:          11000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/fuerzabruta/600/400",
 		},
 		{
 			Titulo:          "Disney on Ice — Frozen",
@@ -306,7 +306,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  12000,
 			Precio:          8500,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/disney/600/400",
 		},
 		// ── Cine ────────────────────────────────────────────────
 		{
@@ -320,7 +320,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  1000,
 			Precio:          2000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/cineestrellas/600/400",
 		},
 		{
 			Titulo:          "Festival Internacional de Cine de Mar del Plata",
@@ -333,7 +333,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  5000,
 			Precio:          3000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/cinemardelplata/600/400",
 		},
 		// ── Tecnología ──────────────────────────────────────────
 		{
@@ -347,7 +347,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  3000,
 			Precio:          5000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/nerdearla/600/400",
 		},
 		{
 			Titulo:          "AI Summit Argentina 2026",
@@ -360,7 +360,7 @@ func seedEventos(db *gorm.DB) {
 			CupoDisponible:  2000,
 			Precio:          12000,
 			Estado:          "activo",
-			ImagenURL:       "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80&fit=crop",
+			ImagenURL:       "https://picsum.photos/seed/aisummit/600/400",
 		},
 	}
 
@@ -376,8 +376,8 @@ func seedEventos(db *gorm.DB) {
 			} else {
 				agregados++
 			}
-		} else if existing.ImagenURL == "" && e.ImagenURL != "" {
-			// Existe pero sin imagen, actualizar solo imagen_url
+		} else if e.ImagenURL != "" && existing.ImagenURL != e.ImagenURL {
+			// Actualizar imagen_url si cambió
 			if err := db.Model(&existing).Update("imagen_url", e.ImagenURL).Error; err != nil {
 				log.Printf("Error actualizando imagen de '%s': %v", e.Titulo, err)
 			} else {
