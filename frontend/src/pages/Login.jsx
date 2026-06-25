@@ -12,7 +12,7 @@ export default function Login() {
   useEffect(() => {
     if (error) {
       clearTimeout(errorTimer.current)
-      errorTimer.current = setTimeout(() => setError(''), 8000)
+      errorTimer.current = setTimeout(() => setError(''), 15000)
     }
     return () => clearTimeout(errorTimer.current)
   }, [error])

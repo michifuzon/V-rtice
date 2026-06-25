@@ -122,6 +122,7 @@ function ClubVortice({ suscripcion, onSuscribir, suscribiendo, onCancelar, cance
 function EventCard({ evento, esFavorito, onToggleFavorito, suscripcionActiva }) {
   const nombre = evento.nombre || evento.titulo || 'Sin nombre'
   const emoji  = getEmoji(evento.categoria)
+  const [imgError, setImgError] = useState(false)
 
   const fecha = evento.fecha_hora
     ? new Date(evento.fecha_hora).toLocaleDateString('es-AR', { day: 'numeric', month: 'short', year: 'numeric' })
@@ -138,8 +139,8 @@ function EventCard({ evento, esFavorito, onToggleFavorito, suscripcionActiva }) 
   return (
     <div className="event-card-wrap">
       <Link to={`/eventos/${evento.id}`} className="event-card">
-        {evento.imagen_url
-          ? <img src={evento.imagen_url} alt={nombre} className="event-img" />
+        {evento.imagen_url && !imgError
+          ? <img src={evento.imagen_url} alt={nombre} className="event-img" onError={() => setImgError(true)} />
           : <div className="event-placeholder">{emoji}</div>
         }
 
