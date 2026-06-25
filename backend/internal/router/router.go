@@ -14,7 +14,7 @@ func Configurar(db *gorm.DB) *gin.Engine {
 	r := gin.Default()
 
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://localhost:5173", "http://localhost"},
+		AllowOrigins:     []string{"http://localhost:5173", "http://localhost", "https://v-rtice-1.onrender.com"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
 		AllowCredentials: true,
