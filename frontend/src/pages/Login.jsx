@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import client from '../api/client'
 
@@ -7,10 +7,18 @@ export default function Login() {
   const [form,    setForm]    = useState({ email: '', password: '' })
   const [error,   setError]   = useState('')
   const [loading, setLoading] = useState(false)
+  const errorTimer = useRef(null)
+
+  useEffect(() => {
+    if (error) {
+      clearTimeout(errorTimer.current)
+      errorTimer.current = setTimeout(() => setError(''), 5000)
+    }
+    return () => clearTimeout(errorTimer.current)
+  }, [error])
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
-    setError('')
   }
 
   const handleSubmit = async (e) => {
@@ -24,10 +32,12 @@ export default function Login() {
       localStorage.setItem('usuario', JSON.stringify(data.usuario))
       navigate('/')
     } catch (err) {
-      const raw = err.response?.data?.error || err.response?.data?.message || ''
-      // Ocultar errores técnicos del validador de Go (ej: "Key: 'LoginRequest.Email'...")
-      const esErrorTecnico = raw.startsWith('Key:') || raw.includes("Error:Field")
-      setError(esErrorTecnico ? 'Email o contraseña incorrectos.' : raw || 'Email o contraseña incorrectos.')
+      const status = err.response?.status
+      if (status === 401 || status === 400) {
+        setError('Email o contraseña inválidos.')
+      } else {
+        setError('No se pudo iniciar sesión. Intentá de nuevo.')
+      }
     } finally {
       setLoading(false)
     }
