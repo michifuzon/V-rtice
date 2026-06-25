@@ -2,6 +2,7 @@ package services
 
 import (
 	"testing"
+	"time"
 
 	"github.com/isaacunaa/ticketek-ds2026/backend/internal/dao"
 	"github.com/isaacunaa/ticketek-ds2026/backend/internal/domain"
@@ -64,6 +65,77 @@ func TestComprar_EventoNoActivo(t *testing.T) {
 
 	assert.ErrorIs(t, err, ErrEventoNoDisponible)
 	assert.Nil(t, entradas)
+	mockEventoDAO.AssertExpectations(t)
+}
+
+func TestComprar_ConDescuentoClub(t *testing.T) {
+	mockEntradaDAO := new(MockEntradaDAO)
+	mockEventoDAO := new(MockEventoDAO)
+	mockUsuarioDAO := new(MockUsuarioDAO)
+
+	evento := &domain.Evento{ID: 1, Estado: "activo", Precio: 1000.0, CupoDisponible: 10}
+	vence := time.Now().Add(24 * time.Hour)
+	usuario := &domain.Usuario{SuscripcionActiva: true, SuscripcionVence: &vence}
+	mockEventoDAO.On("BuscarPorID", uint(1)).Return(evento, nil)
+	mockUsuarioDAO.On("BuscarPorID", uint(5)).Return(usuario, nil)
+	mockEntradaDAO.On("DescontarCupo", mock.Anything, uint(1)).Return(nil)
+	mockEntradaDAO.On("Crear", mock.Anything, mock.AnythingOfType("*domain.Entrada")).Return(nil)
+
+	svc := nuevoEntradaServiceTest(mockEntradaDAO, mockEventoDAO, mockUsuarioDAO)
+	entradas, err := svc.Comprar(5, 1, 1)
+
+	assert.NoError(t, err)
+	assert.Len(t, entradas, 1)
+	assert.Equal(t, 900.0, entradas[0].PrecioPagado)
+	mockEntradaDAO.AssertExpectations(t)
+	mockEventoDAO.AssertExpectations(t)
+}
+
+func TestComprar_SuscripcionVencida(t *testing.T) {
+	mockEntradaDAO := new(MockEntradaDAO)
+	mockEventoDAO := new(MockEventoDAO)
+	mockUsuarioDAO := new(MockUsuarioDAO)
+
+	evento := &domain.Evento{ID: 2, Estado: "activo", Precio: 1000.0, CupoDisponible: 5}
+	vencida := time.Now().Add(-24 * time.Hour)
+	usuario := &domain.Usuario{SuscripcionActiva: true, SuscripcionVence: &vencida}
+	mockEventoDAO.On("BuscarPorID", uint(2)).Return(evento, nil)
+	mockUsuarioDAO.On("BuscarPorID", uint(5)).Return(usuario, nil)
+	mockEntradaDAO.On("DescontarCupo", mock.Anything, uint(2)).Return(nil)
+	mockEntradaDAO.On("Crear", mock.Anything, mock.AnythingOfType("*domain.Entrada")).Return(nil)
+
+	svc := nuevoEntradaServiceTest(mockEntradaDAO, mockEventoDAO, mockUsuarioDAO)
+	entradas, err := svc.Comprar(5, 2, 1)
+
+	assert.NoError(t, err)
+	assert.Len(t, entradas, 1)
+	assert.Equal(t, 1000.0, entradas[0].PrecioPagado)
+	mockEntradaDAO.AssertExpectations(t)
+	mockEventoDAO.AssertExpectations(t)
+}
+
+func TestComprar_MultipleEntradas(t *testing.T) {
+	mockEntradaDAO := new(MockEntradaDAO)
+	mockEventoDAO := new(MockEventoDAO)
+	mockUsuarioDAO := new(MockUsuarioDAO)
+
+	evento := &domain.Evento{ID: 3, Estado: "activo", Precio: 500.0, CupoDisponible: 10}
+	mockEventoDAO.On("BuscarPorID", uint(3)).Return(evento, nil)
+	mockUsuarioDAO.On("BuscarPorID", uint(7)).Return(&domain.Usuario{SuscripcionActiva: false}, nil)
+	mockEntradaDAO.On("DescontarCupo", mock.Anything, uint(3)).Return(nil).Times(3)
+	mockEntradaDAO.On("Crear", mock.Anything, mock.AnythingOfType("*domain.Entrada")).Return(nil).Times(3)
+
+	svc := nuevoEntradaServiceTest(mockEntradaDAO, mockEventoDAO, mockUsuarioDAO)
+	entradas, err := svc.Comprar(7, 3, 3)
+
+	assert.NoError(t, err)
+	assert.Len(t, entradas, 3)
+	for _, e := range entradas {
+		assert.Equal(t, uint(3), e.EventoID)
+		assert.Equal(t, 500.0, e.PrecioPagado)
+		assert.NotEmpty(t, e.Codigo)
+	}
+	mockEntradaDAO.AssertExpectations(t)
 	mockEventoDAO.AssertExpectations(t)
 }
 
