@@ -138,7 +138,10 @@ function EventCard({ evento, esFavorito, onToggleFavorito, suscripcionActiva }) 
   return (
     <div className="event-card-wrap">
       <Link to={`/eventos/${evento.id}`} className="event-card">
-        <div className="event-placeholder">{emoji}</div>
+        {evento.imagen_url
+          ? <img src={evento.imagen_url} alt={nombre} className="event-img" />
+          : <div className="event-placeholder">{emoji}</div>
+        }
 
         <div className="event-body">
           {evento.categoria && (
@@ -268,7 +271,7 @@ export default function Home() {
 
       setEventos(lista)
     } catch (err) {
-      setError('No se pudieron cargar los eventos. Verificá que el backend esté corriendo en http://localhost:8080.')
+      setError('No se pudieron cargar los eventos. Verificá tu conexión e intentá de nuevo.')
       console.error(err)
     } finally {
       setLoading(false)

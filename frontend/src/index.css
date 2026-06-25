@@ -301,6 +301,14 @@ input, textarea { font-family: var(--font); }
   border-color: #c4b5fd;
 }
 
+.event-img {
+  height: 148px;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
 .event-placeholder {
   height: 148px;
   background: linear-gradient(135deg, #0f172a 0%, #2e1065 60%, #4c1d95 100%);
