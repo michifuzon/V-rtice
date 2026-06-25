@@ -391,4 +391,17 @@ func seedEventos(db *gorm.DB) {
 	if actualizados > 0 {
 		log.Printf("Seed: %d evento(s) con imagen actualizada", actualizados)
 	}
+
+	// Fix directo para eventos con títulos que contienen em-dash (coincidencia LIKE)
+	fixes := []struct {
+		like string
+		url  string
+	}{
+		{"Cirque%", "https://picsum.photos/seed/cirque/600/400"},
+		{"River%Boca%", "https://picsum.photos/seed/superclasico/600/400"},
+	}
+	for _, f := range fixes {
+		db.Model(&domain.Evento{}).Where("titulo LIKE ?", f.like).Update("imagen_url", f.url)
+	}
+	log.Println("Seed: fix de imágenes aplicado")
 }
