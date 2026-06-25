@@ -376,8 +376,8 @@ func seedEventos(db *gorm.DB) {
 			} else {
 				agregados++
 			}
-		} else if e.ImagenURL != "" && existing.ImagenURL != e.ImagenURL {
-			// Actualizar imagen_url si cambió
+		} else if e.ImagenURL != "" {
+			// Siempre sincronizar imagen_url
 			if err := db.Model(&existing).Update("imagen_url", e.ImagenURL).Error; err != nil {
 				log.Printf("Error actualizando imagen de '%s': %v", e.Titulo, err)
 			} else {
