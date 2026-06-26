@@ -31,11 +31,11 @@ func (d *EventoDAO) ListarActivos(categoria, search string) ([]domain.Evento, er
 	query := d.db.Where("estado = ?", "activo")
 
 	if categoria != "" {
-		query = query.Where("FIND_IN_SET(?, categoria) > 0", categoria)
+		query = query.Where("(',' || categoria || ',') LIKE ?", "%,"+categoria+",%")
 	}
 
 	if search != "" {
-		query = query.Where("titulo LIKE ?", "%"+search+"%")
+		query = query.Where("titulo ILIKE ?", "%"+search+"%")
 	}
 
 	if err := query.Find(&eventos).Error; err != nil {
